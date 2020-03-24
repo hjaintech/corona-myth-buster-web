@@ -9,7 +9,7 @@ const AppCard = ({ myth, truth }) => {
     const [isMobile, setIsMobile] = useState(true);
     useEffect(() => {
         console.log(window.screen.availWidth);
-        if (window.screen.availWidth > 600) {
+        if (window.screen.availWidth < 600) {
             setIsMobile(true);
         }else {
             setIsMobile(false);
@@ -17,7 +17,7 @@ const AppCard = ({ myth, truth }) => {
     });
 
     return (
-        <Card style={{...styles.cardContainer, flexDirection: isMobile? 'row': 'column'}}>
+        <Card style={{...styles.cardContainer, flexDirection: isMobile? 'column': 'row', width: isMobile ? '90%' : '60%'}}>
                 <InnerCard
                     heading="Myth"
                     text={myth}
