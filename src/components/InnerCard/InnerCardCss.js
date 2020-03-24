@@ -2,7 +2,7 @@ export default {
     container: {
         display: 'flex',
         flexDirection: 'column',
-        borderWidth: '0 10px 0 10px',
+        borderWidth: '1px 10px 1px 10px',
         borderStyle: 'solid',
         borderRadius: '6px',
         marginBottom: '10px',

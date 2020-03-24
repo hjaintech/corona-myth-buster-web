@@ -18,8 +18,18 @@ const AppCard = ({ myth, truth, mythBustedBy, link, index }) => {
 
     return (
         <Card style={{ ...styles.cardContainer, width: isMobile ? '90%' : '60%' }}>
-            <span style={styles.heading}>Bust the Myth #{index}</span>
-            <div style={{display: 'flex', flexDirection: isMobile ? 'column' : 'row'}}>
+            <div style={{ padding: '0 20px 0 20px', height: '100px', backgroundColor: '#2296f3', display: 'flex', flexDirection: 'row', display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '25px'}}>
+                <Chip label={`Source: ${mythBustedBy}`} />
+                <span style={styles.heading}>Bust the Myth #{index}</span>
+                <div style={{ backgroundColor: 'white', borderRadius: 10 }}>
+                    <Button variant="outlined" color="default" onClick={() => { window.open(link) }}>
+                        More details
+                    </Button>
+                </div>
+
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row' }}>
                 <InnerCard
                     heading="Myth"
                     text={myth}
@@ -30,14 +40,6 @@ const AppCard = ({ myth, truth, mythBustedBy, link, index }) => {
                     text={truth}
                     isPositive={true}
                 />
-            </div>
-            <div style={{display: 'flex', justifyContent: 'space-between', flex: 1, margin: '20px'}}>
-                <Chip label={`Source: ${mythBustedBy}`} />
-                <div style={{backgroundColor: 'white', borderRadius: 10, marginLeft: 'auto'}}>
-                    <Button variant="outlined" color="default" onClick={() => {window.open(link)}}>
-                        Click here for more details
-                    </Button>
-                </div>
             </div>
         </Card>
     );
