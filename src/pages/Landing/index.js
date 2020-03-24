@@ -12,6 +12,8 @@ const Landing = () => {
           <Card
           myth={item.myth}
           truth={item.truth}
+          mythBustedBy={item.mythBustedBy}
+          link={item.link}
           index={index + 1}
           key={index}
       />
