@@ -17,7 +17,8 @@ export default {
         textTransform: 'uppercase',
         color: '#383050',
         fontSize: 12,
-        textAlign: 'center'
+        textAlign: 'center',
+        fontWeight: 'bold'
     },
     seperator: {
         height: '1px',

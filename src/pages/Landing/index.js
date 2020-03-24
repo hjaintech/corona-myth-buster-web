@@ -8,10 +8,12 @@ const Landing = () => {
     <div style={{ backgroundColor: '#f5f5f5' }}>
       <Header />
       {
-        data.map((item) => (
+        data.map((item, index) => (
           <Card
           myth={item.myth}
           truth={item.truth}
+          index={index + 1}
+          key={index}
       />
           
         ))
