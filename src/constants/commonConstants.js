@@ -1,0 +1,1 @@
+export const fontFamily = 'IBM Plex Serif,Serif';
