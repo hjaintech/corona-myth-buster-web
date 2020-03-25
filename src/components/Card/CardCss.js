@@ -11,5 +11,16 @@ export default {
         color: 'white',
         margin: '10px 0 10px 0',
         fontWeight: 'bold'
+    },
+    cardHeaderContainer: {
+        padding: '0 20px 0 20px',
+        height: '100px',
+        backgroundColor: '#2296f3',
+        display: 'flex',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginBottom: '25px',
+        padding: '10px'
     }
 };
