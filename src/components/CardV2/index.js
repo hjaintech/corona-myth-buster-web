@@ -4,6 +4,7 @@ import Chip from '@material-ui/core/Chip';
 import InnerCard from '../InnerCard';
 import styles from './CardCss';
 import { isMobile } from '../../util/commonUtils';
+import ReactGA from 'react-ga';
 
 
 const AppCard = ({ heading, myth, truth, mythBustedBy, link, index }) => {
@@ -39,9 +40,12 @@ const AppCard = ({ heading, myth, truth, mythBustedBy, link, index }) => {
     }
 
     const getCardFooter = () => {
+        const onSourceBtnClick = () => {
+            ReactGA.event({ category: 'User', action: `source_btn_click_${index}_${heading}`});
+        }
         return (
             <div style={styles.footerContainer}>
-                <Button style={styles.viewSourceButton} variant="outlined" href={link} target="_blank"> {`Source: ${mythBustedBy}`} </Button>
+                <Button style={styles.viewSourceButton} variant="outlined" href={link} target="_blank" onClick={onSourceBtnClick}> {`Source: ${mythBustedBy}`} </Button>
             </div>
         );
     }

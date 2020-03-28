@@ -6,10 +6,9 @@ import colors from '../../constants/colors';
 
 const InnerCard = ({ heading, text, isPositive }) => {
     const borderColor = isPositive ? colors.positive : colors.negative;
-    const boxShadow = `1px 1px 5px 3px #ccc`;
     const icon = isPositive ? tickIcon : crossIcon;
     return (
-        <div style={{ ...styles.container, borderColor: borderColor, boxShadow }}>
+        <div style={{ ...styles.container, borderColor: borderColor }}>
             <div style={styles.headingContainer}>
                 <img src={icon} style={styles.icon} />
                 <span style={styles.heading}>{heading}</span>

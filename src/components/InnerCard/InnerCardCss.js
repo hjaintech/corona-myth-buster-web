@@ -1,3 +1,5 @@
+import colors from '../../constants/colors';
+
 export default {
     container: {
         display: 'flex',
@@ -11,7 +13,8 @@ export default {
         backgroundColor: 'white',
         margin: '10px 5% 10px 5%',
         padding: '20px',
-        flex: 1
+        flex: 1,
+        boxShadow: `1px 1px 5px 5px ${colors.grey}`
     },
     heading: {
         textTransform: 'uppercase',
