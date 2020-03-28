@@ -2,21 +2,21 @@ export default {
     container: {
         display: 'flex',
         flexDirection: 'column',
-        borderWidth: '1px 10px 1px 10px',
+        borderWidth: '0 0 0 10px',
         borderStyle: 'solid',
         borderRadius: '6px',
         marginBottom: '10px',
         marginTop: '10px',
         paddingLeft: '20px',
         backgroundColor: 'white',
-        margin: '10px 20px 10px 20px',
+        margin: '10px 5% 10px 5%',
         padding: '20px',
         flex: 1
     },
     heading: {
         textTransform: 'uppercase',
         color: '#383050',
-        fontSize: 12,
+        fontSize: 16,
         textAlign: 'center',
         fontWeight: 'bold'
     },
