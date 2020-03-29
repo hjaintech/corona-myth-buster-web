@@ -6,7 +6,8 @@ export default {
         display: 'flex',
         flexDirection: 'column',
         borderRadius: '10px',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        border: `1px solid ${colors.primaryDark}`
     },
     heading: {
         color: 'white',
@@ -32,11 +33,11 @@ export default {
     viewSourceButton: {
         width: '90%',
         color: colors.white,
-        borderColor: colors.white,
+        backgroundColor: colors.primaryDark,
         margin: '5%'
     },
     footerContainer: {
-        backgroundColor: colors.primaryDark,
+        backgroundColor: colors.primaryLight,
         marginTop: '10px'
     },
     verifierChip: {

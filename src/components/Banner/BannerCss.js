@@ -23,7 +23,8 @@ export default {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginLeft: '10px'
     },
     title: {
         color: colors.white,

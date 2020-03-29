@@ -14,10 +14,7 @@ const AppCard = ({ heading, myth, truth, mythBustedBy, link, index }) => {
         const flexDirection = bIsMobile ? "column" : "row";
         return (
             <div style={{ ...styles.cardHeaderContainer, flexDirection: flexDirection }}>
-                <div style={styles.headingContainer}>
-                    <span style={styles.heading}>{heading}</span>
-                </div>
-
+                <span style={styles.heading}>{heading}</span>
             </div>
         );
     }
