@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../../components/Header';
 import Banner from '../../components/Banner';
-import Card from '../../components/CardV2';
+import Card from '../../components/Card';
 import data from '../../assets/data';
 import {isMobile} from '../../util/commonUtils';
 

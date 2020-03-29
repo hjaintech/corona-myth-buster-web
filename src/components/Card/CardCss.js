@@ -1,26 +1,46 @@
+import colors from '../../constants/colors';
 export default {
     cardContainer: {
-        margin: '25px auto 25px auto',
-        backgroundColor: '#f5f5f5',//'white',//'#204769',
+        margin: '25px 10px 25px 10px',
+        backgroundColor: colors.primaryLight,
         display: 'flex',
         flexDirection: 'column',
-        padding: '0 0 20px 0',
         borderRadius: '10px',
+        justifyContent: 'space-between'
     },
     heading: {
         color: 'white',
-        margin: '10px 0 10px 0',
         fontWeight: 'bold'
     },
     cardHeaderContainer: {
-        padding: '0 20px 0 20px',
-        height: '100px',
-        backgroundColor: '#2296f3',
+        height: '40px',
+        backgroundColor: colors.primaryDark,
         display: 'flex',
-        display: 'flex',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         alignItems: 'center',
         marginBottom: '25px',
-        padding: '10px'
+    },
+    headingContainer: {
+        backgroundColor: colors.primaryModerate,
+        padding: '10px 10px 10px 10px',
+        margin: '0 15% -35px 15%',
+        width: '70%',
+        borderRadius: '10px',
+        display: 'flex',
+        justifyContent: 'center'
+    },
+    viewSourceButton: {
+        width: '90%',
+        color: colors.white,
+        borderColor: colors.white,
+        margin: '5%'
+    },
+    footerContainer: {
+        backgroundColor: colors.primaryDark,
+        marginTop: '10px'
+    },
+    verifierChip: {
+        margin: '10px 5% 10px 5%',
+        width: '90%'
     }
 };

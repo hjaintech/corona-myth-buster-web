@@ -3,33 +3,28 @@ import { Card, Button } from '@material-ui/core';
 import Chip from '@material-ui/core/Chip';
 import InnerCard from '../InnerCard';
 import styles from './CardCss';
-import {isMobile} from '../../util/commonUtils';
+import { isMobile } from '../../util/commonUtils';
+import ReactGA from 'react-ga';
 
 
-const AppCard = ({ myth, truth, mythBustedBy, link, index }) => {
+const AppCard = ({ heading, myth, truth, mythBustedBy, link, index }) => {
     const bIsMobile = isMobile();
 
     const getCardHeader = () => {
         const flexDirection = bIsMobile ? "column" : "row";
         return (
-            <div style={{...styles.cardHeaderContainer, flexDirection: flexDirection}}>
-                <Chip label={`Source: ${mythBustedBy}`} />
-                <span style={styles.heading}>Bust the Myth #{index}</span>
-                <div style={{ backgroundColor: 'white', borderRadius: 10 }}>
-                    <Button variant="outlined" color="default" onClick={() => { window.open(link) }}>
-                        More details
-                    </Button>
+            <div style={{ ...styles.cardHeaderContainer, flexDirection: flexDirection }}>
+                <div style={styles.headingContainer}>
+                    <span style={styles.heading}>{heading}</span>
                 </div>
 
             </div>
         );
     }
 
-    return (
-        <Card style={{ ...styles.cardContainer, width: bIsMobile ? '90%' : '60%' }}>
-            {getCardHeader()}
-
-            <div style={{ display: 'flex', flexDirection: bIsMobile ? 'column' : 'row' }}>
+    const getCardContent = () => {
+        return (
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <InnerCard
                     heading="Myth"
                     text={myth}
@@ -41,6 +36,27 @@ const AppCard = ({ myth, truth, mythBustedBy, link, index }) => {
                     isPositive={true}
                 />
             </div>
+        )
+    }
+
+    const getCardFooter = () => {
+        const onSourceBtnClick = () => {
+            ReactGA.event({ category: 'User', action: `source_btn_click_${index}_${heading}`});
+        }
+        return (
+            <div style={styles.footerContainer}>
+                <Button style={styles.viewSourceButton} variant="outlined" href={link} target="_blank" onClick={onSourceBtnClick}> {`Source: ${mythBustedBy}`} </Button>
+            </div>
+        );
+    }
+
+    const cardWidth = bIsMobile ? '90%' : '30%';
+    const cardMinWidth = bIsMobile ? cardWidth : '20rem';
+    return (
+        <Card style={{ ...styles.cardContainer, width: cardWidth, minWidth: cardMinWidth }}>
+            {getCardHeader()}
+            {getCardContent()}
+            {getCardFooter()}
         </Card>
     );
 }
