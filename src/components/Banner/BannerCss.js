@@ -20,7 +20,6 @@ export default {
         left: 0,
         height: height,
         width: '100%',
-        padding: ' 0 20px 0 20px',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
