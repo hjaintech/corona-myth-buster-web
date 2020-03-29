@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Rum Project locally
+## Run Project locally
 
 In the project directory, you can run below commands
 
