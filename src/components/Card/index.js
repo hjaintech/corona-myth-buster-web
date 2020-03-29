@@ -23,7 +23,7 @@ const AppCard = ({ heading, myth, truth, mythBustedBy, link, index }) => {
         return (
             <div style={{ display: 'flex', flexDirection: 'column' }}>
                 <InnerCard
-                    heading="Myth"
+                    heading="Claim"
                     text={myth}
                     isPositive={false}
                 />
