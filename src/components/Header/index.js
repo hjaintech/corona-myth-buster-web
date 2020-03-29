@@ -4,6 +4,7 @@ import {
   AppBar, Toolbar, Button, Dialog, DialogTitle, DialogContent, Typography, DialogActions, IconButton
 } from '@material-ui/core';
 import CloseIcon from '@material-ui/icons/Close';
+import ReactGA from 'react-ga';
 
 const Header = () => {
   const [isAboutUsDialogOpen, setIsAboutUsDialogOpen] = useState(false);
@@ -13,8 +14,18 @@ const Header = () => {
     setIsAboutUsDialogOpen(false);
   }
 
+  const onOpenAboutUsDialog = () => {
+    ReactGA.event({ category: 'User', action: `about_btn_click`});
+    setIsAboutUsDialogOpen(true);
+  }
+
   const onCloseContributeDialog = () => {
     setIsContributeDialogOpen(false);
+  }
+
+  const onOpenContributeDialog = () => {
+    ReactGA.event({ category: 'User', action: `contribute_btn_click`});
+    setIsContributeDialogOpen(true);
   }
 
   const getAboutUsDialog = () => (
@@ -61,7 +72,7 @@ const Header = () => {
         </Typography>
         <Typography style={{ display: 'flex', justifyContent: 'space-between' }} gutterBottom>
           <a href="https://github.com/hjaintech/corona-myth-buster-web">Github Repo</a>
-          <span>Email Address: <i>hjain.tech@gmail.com</i></span>
+          <span>Email: <i>hjain.tech@gmail.com</i></span>
         </Typography>
       </DialogContent>
     </Dialog>
@@ -72,8 +83,8 @@ const Header = () => {
       <Toolbar>
         <Button style={styles.headerBtn} href="https://www.coronamyths.in">Home</Button>
         <div style={styles.headerBtnContainer}>
-          <Button style={styles.headerBtn} onClick={() => { setIsContributeDialogOpen(true) }}>Contribute</Button>
-          <Button style={styles.headerBtn} onClick={() => { setIsAboutUsDialogOpen(true) }}>About Us</Button>
+          <Button style={styles.headerBtn} onClick={onOpenContributeDialog}>Contribute</Button>
+          <Button style={styles.headerBtn} onClick={onOpenAboutUsDialog}>About Us</Button>
         </div>
       </Toolbar>
     </AppBar>
